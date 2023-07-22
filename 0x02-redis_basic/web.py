@@ -36,20 +36,18 @@ def get_page(url: str) -> str:
     return res.text
 return ""
 
-# Test the implementation with a slow response simulator
 def main():
     slow_url = "http://slowwly.robertomurray.co.uk/delay/1000/url/https://www.example.com"
     fast_url = "https://www.example.com"
 
-    print(get_page(slow_url))  # This will be slow due to the simulator
-    print(get_page(slow_url))  # This should be cached and fast
-    print(get_page(fast_url))  # This should be fetched again since it's a different URL
-    print(get_page(fast_url))  # This should be cached and fast
-
-    # Wait for more than 10 seconds to simulate cache expiration
+    print(get_page(slow_url))  
+    print(get_page(slow_url))  
+    print(get_page(fast_url))  
+    print(get_page(fast_url))
+    
     time.sleep(11)
 
-    print(get_page(slow_url))  # This should be fetched again after expiration
+    print(get_page(slow_url))
 
 if __name__ == "__main__":
     main()
