@@ -35,19 +35,3 @@ def get_page(url: str) -> str:
     res = requests.get(url)
     return res.text
 return ""
-
-def main():
-    slow_url = "http://slowwly.robertomurray.co.uk/delay/1000/url/https://www.example.com"
-    fast_url = "https://www.example.com"
-
-    print(get_page(slow_url))  
-    print(get_page(slow_url))  
-    print(get_page(fast_url))  
-    print(get_page(fast_url))
-    
-    time.sleep(11)
-
-    print(get_page(slow_url))
-
-if __name__ == "__main__":
-    main()
